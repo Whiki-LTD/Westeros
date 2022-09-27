@@ -1,6 +1,6 @@
 <?php
 /**
- * SkinTemplate class for the Example skin
+ * SkinTemplate class for the Westeros skin
  *
  * @ingroup Skins
  */
