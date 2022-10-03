@@ -115,7 +115,7 @@ class WesterosTemplate extends BaseTemplate {
     <!-- end mod header -->
     </div>
     <!-- content -->
-    <div id="content" class="mw-body" role="main" style="height: auto !important; min-height: 0px !important;">
+    <div class="mw-body" role="main" style="height: auto !important; min-height: 0px !important;">
      <?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice"><?php $this->html( 'sitenotice' ); ?></div><?php } ?>
     <div class="article-header">
          <!-- Indicators -->
@@ -164,6 +164,7 @@ class WesterosTemplate extends BaseTemplate {
     </div>
 		<h1 id="firstHeading" class="firstHeading mw-first-heading"><?php $this->html( 'title' ); ?></h1>
     <div id="bodyContent">
+    <div id="content">
     <div id="site-sub">
         <?php if ( $this->data['isarticle'] ) { $this->msg( 'tagline' ); } ?>
         <?php if ( $this->data['subtitle'] ) { ?><div id="contentSub"><?php $this->html( 'subtitle' ); ?></div><?php } ?>
@@ -172,6 +173,7 @@ class WesterosTemplate extends BaseTemplate {
     <?php $this->html( 'bodytext' ) ?>
     <?php $this->html( 'dataAfterContent' ); ?>
     <?php $this->html( 'catlinks' ); ?>
+	    </div>
 </div>
     </div>
 <ul class="footerMeta">
