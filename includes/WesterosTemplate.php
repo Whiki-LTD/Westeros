@@ -1,6 +1,6 @@
 <?php
 /**
- * BaseTemplate class for the Westeros skin
+ * BaseTemplate class for the Example skin
  *
  * @ingroup Skins
  */
@@ -72,7 +72,7 @@ class WesterosTemplate extends BaseTemplate {
                         $hasChildren = isset( $menuNodes[$level0]['children'] );
             ?>
             <li class="page_item<?php echo ( $hasChildren ? ' page_item_has_children' : '' ) ?>">
-                <a class="nav<?php echo $counter ?>_link" href="<?php echo htmlspecialchars( $menuNodes[$level0]['href'], ENT_QUOTES ) ?>"><?php echo htmlspecialchars( $menuNodes[$level0]['text'], ENT_QUOTES ) ?></a>
+                <a class="nav<?php echo $counter ?>_link" href="<?php echo htmlspecialchars( $menuNodes[$level0]['href'], ENT_QUOTES ) ?>"><?php echo htmlspecialchars( $menuNodes[$level0]['text'], ENT_QUOTES ) ?><?php if ( $hasChildren ) { ?><svg id="wds-icons-dropdown-tiny" class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron" width="14" height="14" viewBox="0 0 14 14"><path d="M 2 5 L 12 5 L 7 10 Z"></path></svg><?php } ?></a>
                 <?php if ( $hasChildren ) { ?>
                 <ul class="children">
 <?php
@@ -164,7 +164,7 @@ class WesterosTemplate extends BaseTemplate {
     </div>
 		<h1 id="firstHeading" class="firstHeading mw-first-heading"><?php $this->html( 'title' ); ?></h1>
     <div id="bodyContent">
-    <div id="content">
+        <div id="content">
     <div id="site-sub">
         <?php if ( $this->data['isarticle'] ) { $this->msg( 'tagline' ); } ?>
         <?php if ( $this->data['subtitle'] ) { ?><div id="contentSub"><?php $this->html( 'subtitle' ); ?></div><?php } ?>
@@ -173,7 +173,7 @@ class WesterosTemplate extends BaseTemplate {
     <?php $this->html( 'bodytext' ) ?>
     <?php $this->html( 'dataAfterContent' ); ?>
     <?php $this->html( 'catlinks' ); ?>
-	    </div>
+        </div>
 </div>
     </div>
 <ul class="footerMeta">
@@ -191,10 +191,14 @@ class WesterosTemplate extends BaseTemplate {
 			<?php
 			}
 			?>
-<ul>
+</ul>
     <!-- stylesheet/font -->
     <link href="https://blogfonts.com/css/aWQ9MTY2NTE0JnN1Yj01MTQmYz1tJnR0Zj1NaWtlU2Fuc0ZyZWUub3RmJm49bWlrZS1zYW5zLWZyZWU/Mike Sans Free.otf" rel="stylesheet" type="text/css"/>
 		<?php $this->printTrail(); ?>
+        <footer class="global-footer">
+	<p class="global-footer-text">© 2022 whiki.online | <a href="https://whiki.online/privacy-policy">Privacy Policy</a> | <a href="https://whiki.online/terms-of-service-conditions-of-use/">Terms of Service</a></p>
+  </a>
+</footer>
 </body>
 </html><?php
 	}
